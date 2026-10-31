@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import '../widgets/confirm_connection_dialog.dart';
 import 'file_manager_screen.dart';
-
+// class device
 class _Device {
   final String name;
   final IconData icon;

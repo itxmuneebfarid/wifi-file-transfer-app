@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'sending_screen.dart';
-
+// class Folder
 class _Folder {
   final String name;
   final String info;

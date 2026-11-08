@@ -1,0 +1,60 @@
+Checking the Windows terminal and Python requirements for setup
+Android Studio se bhi ye sab ho jata hai. Commands Android Studio ke andar wale Terminal mein chalengi, aur app Run ▶ button se phones par install hogi.
+
+1. Android Studio tayyar karein (sirf ek baar)
+File → Settings → Plugins mein Flutter aur Dart plugin install karein, phir Android Studio restart karein.
+Python install karein (https://www.python.org/downloads/). Install karte waqt “Add python.exe to PATH” zaroor tick karein. Android ki settings patch karne wali script ko Python chahiye.
+Node.js install karein (https://nodejs.org). Firebase CLI ke liye ye zaroori hai.
+2. Project kholein
+Zip ko extract karein, maslan C:\projects\sharesync mein.
+Android Studio mein File → Open karke sharesync folder chunein (wo folder jisme pubspec.yaml hai).
+3. Terminal mein setup commands
+Neeche Terminal tab kholein (ya View → Tool Windows → Terminal). Windows par ye PowerShell hota hai, is liye ./setup.sh nahi chalega. Ye commands ek ek karke chalayein:
+
+flutter create --platforms=android --org com.sharesync --project-name sharesync .
+python tool/patch_android.py
+flutter pub get
+Teesri command ke baad “manifest patched” aur “MainActivity patched” likha aana chahiye.
+
+4. Firebase connect karein (usi Terminal mein)
+npm install -g firebase-tools
+firebase login
+dart pub global activate flutterfire_cli
+flutterfire configure --platforms=android
+flutter pub get
+firebase login browser kholega. Apne Google account se login karein.
+flutterfire configure mein apna Firebase project chunein.
+Agar “flutterfire is not recognized” aaye to Android Studio band karein. Windows search mein “Environment Variables” kholein aur Path mein ye folder add karein:
+C:\Users\<aapka-naam>\AppData\Local\Pub\Cache\bin
+Phir Android Studio dobara kholein.
+Firebase Console wale steps (Anonymous login ON karna, Firestore banana, rules paste karna) pehle jaise hi hain. Wo browser mein hote hain.
+
+5. Dono phones par app chalayein
+Phone mein Settings → About phone kholein aur Build number par 7 baar tap karein. Phir Developer options → USB debugging ON karein.
+Phone USB se lagayein. Phone par “Allow USB debugging?” aaye to Allow dabayein.
+Android Studio mein upar device wale dropdown mein apna phone chunein.
+Upar Run configuration ke saath Debug ki jagah release mode behtar hai. Ye Terminal se karein:
+   flutter run --release
+Ya seedha green Run ▶ button dabayein. Debug mode bhi chalega, bas thora slow hoga.
+5. Pehla phone nikal kar dusra lagayein, device chunein aur dobara Run karein.
+
+APK banane ka tareeqa (USB ke baghair dusre phone ke liye):
+
+flutter build apk --release
+APK yahan banegi: build\app\outputs\flutter-apk\app-release.apk. Is file ko WhatsApp ya USB se dusre phone mein bhej kar install kar dein.
+
+6. Test karein
+Dono phone same Wi-Fi par hon aur internet chal raha ho. Phir:
+
+Settings → Firebase mein “Connected” aana chahiye.
+Nearby Devices mein dusra phone dikhna chahiye.
+Photo bhejein.
+Gallery se Share → ShareSync try karein.
+Firebase Console mein transfers collection check karein.
+Agar kisi command par red error aaye to us error ka screenshot ya text mujhe bhej dein, main bata doonga kya theek karna hai.
+
+
+Claude works directly with your codebase
+
+
+

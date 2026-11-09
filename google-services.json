@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "189000064044",
+    "project_id": "shawty-cca27",
+    "storage_bucket": "shawty-cca27.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189000064044:android:5e71624ef96c61d36f0589",
+        "android_client_info": {
+          "package_name": "com.example.sharesync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcAqTXzlyTPPnv9ar8t-w1KHUldhNSOr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
